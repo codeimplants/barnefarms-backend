@@ -1,4 +1,5 @@
 import mongoose from "mongoose";                             
+import { type } from "os";
 const productSchema = new mongoose.Schema({
   user:{
     type:mongoose.Schema.Types.ObjectId,
@@ -26,6 +27,10 @@ const productSchema = new mongoose.Schema({
     category:{
         type:String,
         required:true,
+    },
+    qty:{
+        type:String,
+        required:true
     }
      
 },{

@@ -20,6 +20,10 @@ const userSchema = new mongoose.Schema({
         required:true,
         default:false,
     },
+    phoneNumber:{
+        type:String,
+        required:true,
+    }
 },{timestamps:true});
 
 userSchema.methods.matchPassword = async function (enteredPassword) {

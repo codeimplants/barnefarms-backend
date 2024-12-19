@@ -30,7 +30,7 @@ const authUser = asyncHandler(async (req, res) => {
             name: user.name,
             email: user.email,
             isAdmin: user.isAdmin,
-            token,  // Return the token in the response
+            token,  
         });
     } else {
         res.status(401);
