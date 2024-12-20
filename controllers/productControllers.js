@@ -26,7 +26,7 @@ const createProduct = asyncHandler(async(req,res)=>{
         image:'/images/sample.png',
         countInStock:0,
         category:"Sample",
-        qty:"0"
+        quantity:"0"
     })
 
     const createdProduct = await product.save();
@@ -34,7 +34,7 @@ const createProduct = asyncHandler(async(req,res)=>{
 });
 
 const updateProduct = asyncHandler(async(req,res)=>{
-    const {name,price,image,countInStock,category,qty} = req.body;
+    const {name,price,image,countInStock,category,quantity} = req.body;
     const product = await Product.findById(req.params.id);
 
     if(product){
@@ -43,7 +43,7 @@ const updateProduct = asyncHandler(async(req,res)=>{
         product.image=image;
         product.countInStock= countInStock;
         product.category = category;
-        product.qty = qty;
+        product.quantity = quantity;
         const updatedProduct = await product.save();
         res.json(updatedProduct)
     }else{
